@@ -1,4 +1,4 @@
-public enum Nombre implements Valeur {
+public enum Point implements Valeur {
     N2,
     N3,
     N4,
@@ -14,7 +14,7 @@ public enum Nombre implements Valeur {
         return 2 + ordinal();
     }
 
-    static Nombre valueOf(int n) {
+    static Point valueOf(int n) {
         return values()[n - 2];
     }
 

@@ -8,8 +8,8 @@ public class App {
     }
 
     public static void main(String[] args) throws Exception {
-        Carte c1 = new Carte(Couleur.Carreau, Nombre.N10);
-        Carte c2 = new Carte(Couleur.Carreau, Nombre.N2);
+        Carte c1 = new Carte(Couleur.Carreau, Point.N10);
+        Carte c2 = new Carte(Couleur.Carreau, Point.N2);
         System.out.println(compare(c1, c1));
         System.out.println(compare(c1, c2));
         System.out.println(compare(c2, c1));

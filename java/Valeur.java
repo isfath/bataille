@@ -10,7 +10,7 @@ public interface Valeur {
     }
 
     public static Valeur[] values() { //FIXME static final attribute?
-        Nombre[] n = Nombre.values();
+        Point[] n = Point.values();
         Figure[] f = Figure.values();
         Valeur[] ret = new Valeur[n.length + f.length];
         System.arraycopy(n, 0, ret, 0, n.length);
