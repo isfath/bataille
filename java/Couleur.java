@@ -1,14 +1,15 @@
 public enum Couleur {
-    /* on appelle le constructeur avec un argument
-       ne pas confondre avec `type t = Coeur of string | ...` :
+    /* on appelle le constructeur avec deux arguments
+       ne pas confondre avec `type t = Coeur of string * bool | ...` :
        depuis l'extérieur, les cas ne demandent rien ! */
-    Coeur("♡"),
-    Trefle("♣️"),
-    Pique("♠️"),
-    Carreau("♦️");
+    Coeur("♡", true),
+    Trefle("♣️", false),
+    Pique("♠️", false),
+    Carreau("♦️", true);
 
-    //on prévoit de la place pour la représentation
+    //on prévoit de la place pour la représentation et la "vraie couleur"
     private String repr;
+    public final boolean rouge;
 
     @Override
     public String toString() {
@@ -25,7 +26,8 @@ public enum Couleur {
     }
 
     //on stocke la représentation fournie plus haut
-    Couleur(String repr) {
+    Couleur(String repr, boolean rouge) {
         this.repr = repr;
+        this.rouge = rouge;
     }
 }
