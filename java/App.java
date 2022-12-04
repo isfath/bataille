@@ -4,7 +4,7 @@ public class App {
     }
 
     private static String compare(Carte c1, Carte c2) {
-        return c1.toString() + sign(c1.compareTo(c2)) + c2;
+        return c1.toEmoji() + sign(c1.compareTo(c2)) + c2.toEmoji();
     }
 
     public static void main(String[] args) throws Exception {
@@ -14,6 +14,7 @@ public class App {
         System.out.println(compare(c1, c2));
         System.out.println(compare(c2, c1));
         for (Carte c : Paquet.melange())
-            System.out.println(c);
+            System.out.print(c.toEmoji());
+        System.out.println();
     }
 }

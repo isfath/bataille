@@ -23,6 +23,12 @@ public class Carte implements Comparable<Carte> { //TODO essayer record
         return valeur.toString() + couleur.toString();
     }
 
+    public String toEmoji() {
+        int[] map = new int[]{0, 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 1};
+        int codePoint = 0x1f0a0 + 16 * couleur.ordinal() + map[valeur.nombre()];
+        return String.valueOf(Character.toChars(codePoint));
+    }
+
     public Carte(Couleur couleur, Valeur valeur) {
         this.couleur = couleur;
         this.valeur = valeur;

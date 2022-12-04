@@ -2,10 +2,11 @@ public enum Couleur {
     /* on appelle le constructeur avec deux arguments
        ne pas confondre avec `type t = Coeur of string * bool | ...` :
        depuis l'extérieur, les cas ne demandent rien ! */
-    Coeur("♡", true),
-    Trefle("♣️", false),
     Pique("♠️", false),
-    Carreau("♦️", true);
+    Coeur("♡", true),
+    Carreau("♦️", true),
+    Trefle("♣️", false);
+    //l'ordre est utilisé par Carte.toEmoji()
 
     //on prévoit de la place pour la représentation et la "vraie couleur"
     private String repr;
