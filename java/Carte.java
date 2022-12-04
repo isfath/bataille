@@ -12,7 +12,7 @@ public class Carte implements Comparable<Carte> { //TODO essayer record
     public int compareTo(Carte o) {
         if (valeur.gagneContre(o.valeur))
             return 1;
-        else if (valeur.equals(o))
+        else if (valeur.equals(o.valeur))
             return 0;
         else
             return -1;
