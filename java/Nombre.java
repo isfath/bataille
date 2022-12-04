@@ -9,8 +9,13 @@ public enum Nombre implements Valeur {
     N9,
     N10;
 
+    @Override
+    public int nombre() {
+        return 2 + ordinal();
+    }
+
     static Nombre valueOf(int n) {
-        return valueOf("N" + n);
+        return values()[n - 2];
     }
 
     @Override

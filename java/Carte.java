@@ -1,4 +1,4 @@
-public class Carte { //TODO essayer record
+public class Carte implements Comparable<Carte> { //TODO essayer record
     public final Couleur couleur;
     public final Valeur valeur;
 
@@ -8,7 +8,15 @@ public class Carte { //TODO essayer record
         return couleur.equals(other.couleur) && valeur.equals(other.valeur);
     }
 
-    //TODO comparable
+    @Override
+    public int compareTo(Carte o) {
+        if (valeur.gagneContre(o.valeur))
+            return 1;
+        else if (valeur.equals(o))
+            return 0;
+        else
+            return -1;
+    }
 
     @Override
     public String toString() {
