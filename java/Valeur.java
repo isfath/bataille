@@ -1,13 +1,10 @@
 /* impossible d'écrire extends Comparable<Valeur> :
-   une enum implémente Comparable<X>
-   mais on ne peut pas implémenter deux fois une interface ! */
+   les enums Figure et Point implémentent Comparable<X>
+   mais on ne peut pas implémenter deux fois une interface !
+   si on veut une méthode, on est donc obligé d'en définr une autre */
 
 public interface Valeur {
     int nombre();
-
-    default boolean gagneContre(Valeur autre) {
-        return nombre() > autre.nombre();
-    }
 
     public static Valeur[] values() { //FIXME static final attribute?
         Point[] n = Point.values();
