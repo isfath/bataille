@@ -69,9 +69,31 @@ let comparaison c c' =
     (signe (compare (nombre c) (nombre c')))
     (to_string c')
 
+let couleurs = [Coeur; Trefle; Pique; Carreau]
+let points = [N2; N3; N4; N5; N6; N7; N8; N9; N10]
+let figures = [V; D; R; A]
+let valeurs =
+  List.map (fun x -> Point x) points @
+  List.map (fun x -> Figure x) figures
+
+let jeu =
+  List.concat_map (fun v ->
+    List.map (fun c -> v, c) couleurs
+  ) valeurs
+
+(* https://discuss.ocaml.org/t/more-natural-preferred-way-to-shuffle-an-array/217/6 *)
+let rec shuffle = function
+  | [] -> []
+  | [single] -> [single]
+  | list ->
+    let (before, after) = List.partition (fun _ -> Random.bool ()) list in
+    List.rev_append (shuffle before) (shuffle after)
+
 let () =
   let c = Simple (Point N10, Carreau) in
   let c' = Simple (Point N2, Coeur) in
   print_endline (comparaison c c);
   print_endline (comparaison c c');
   print_endline (comparaison c' c);
+  List.iter (fun x -> print_string (to_string (Simple x))) (shuffle jeu);
+  print_newline ()
