@@ -27,3 +27,13 @@ let nombre x =
       | Figure A -> 14
 
 let (<<) c c' = nombre c < nombre c'
+
+let to_option x =
+  match x with
+  | Joker -> None
+  | Simple s -> Some s
+
+let of_option x =
+  match x with
+  | None -> Joker
+  | Some s -> Simple s
