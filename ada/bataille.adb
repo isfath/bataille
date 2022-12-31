@@ -22,8 +22,8 @@ procedure Bataille is
 	end record;
 
 	type Vraie_Couleur is (Rouge, Noir);
-	type Avec_Joker (S : Sorte := Pt; J : Boolean := false) is record
-		case J is
+	type Avec_Joker (S : Sorte := Pt; Joker : Boolean := false) is record
+		case Joker is
 			when false => Simple : Carte(S);
 			when true => Couleur : Vraie_Couleur;
 		end case;
