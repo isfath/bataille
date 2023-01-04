@@ -14,4 +14,12 @@ public interface Valeur {
         System.arraycopy(f, 0, ret, n.length, f.length);
         return ret;
     }
+
+    public static Valeur aleatoire() {
+        int r = (int)(Math.random() * 13);
+        if (r < 9)
+            return Point.values()[r];
+        else
+            return Figure.values()[r - 9];
+    }
 }

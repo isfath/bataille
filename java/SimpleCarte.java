@@ -25,6 +25,10 @@ public class SimpleCarte extends Carte { //TODO essayer record
         return String.valueOf(Character.toChars(codePoint));
     }
 
+    public static SimpleCarte aleatoire() {
+        return new SimpleCarte(Couleur.aleatoire(), Valeur.aleatoire());
+    }
+
     public SimpleCarte(Couleur couleur, Valeur valeur) {
         this.couleur = couleur;
         this.valeur = valeur;

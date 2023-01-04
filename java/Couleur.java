@@ -31,4 +31,8 @@ public enum Couleur {
         this.repr = repr;
         this.rouge = rouge;
     }
+
+    public static Couleur aleatoire() {
+        return values()[(int)(Math.random() * 4)];
+    }
 }
